@@ -1,12 +1,13 @@
 import Footer from "./Footer"
 import NavBar from "./Navbar"
-
 const Layout = ({ children }) => {
     return (
         <>
             <NavBar />
-            <div className="h-[100vh]">
-                {children}
+            <div className="w-full flex justify-center bg-[#f5f5f7]">
+                <div className="w-full max-w-[1200px]">
+                    {children}
+                </div>
             </div>
             <Footer />
         </>
