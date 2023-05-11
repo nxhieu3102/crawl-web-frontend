@@ -5,8 +5,12 @@ import { useEffect, useState } from "react"
 import { CONFIG } from '../storage/Config'
 import { Spin, Empty } from "antd"
 import { Link, useLocation } from "react-router-dom"
+import { LOGO } from '../storage/Config'
+
+
 const PRODUCT_PER_PAGE = 16
 const defaultImageLinkLaptop = "https://cdn2.cellphones.com.vn/x358,webp,q100/media/catalog/product/1/_/1_126_2_1.png"
+
 const API = process.env.REACT_APP_API
 
 
@@ -52,8 +56,11 @@ const ListProduct = ({ products }) => {
                 <div key={index} className='flex justify-left mb-[60px]'>
                     {row.map((product, index) =>
                         <Link to="/product" state={{productID : product.ProductID}} key={index * 10090} className={`bg-white rounded-[5px] p-[12px] cursor-pointer w-[23%] pb-[24px] ${index !== 0 ? "ml-[2.666666%]" : ""}`}>
-                            <div className="h-[70%]">
+                            <div className="h-[70%] relative">
                                 <img src={product.ImageLink.length === 0 ? defaultImageLinkLaptop : product.ImageLink} className="w-full" alt="item" />
+                                <div className="w-[30px] rounded-[50%] absolute bottom-0">
+                                    <img src={LOGO[product.ShopName]} className="rounded-[50%]"  alt="logoshop"/>
+                                </div>
                             </div>
                             <div className="h-[30%]">
                                 <p className='font-bold mt-[20px] text-[14px]'>{product.ProductName}</p>
