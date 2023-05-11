@@ -28,10 +28,10 @@ export const CONFIG = [
         title: "RAM",
         key: "ram",
         value: [
-            { name: "4GB", value: "4GB" },
-            { name: "8GB", value: "8GB" },
-            { name: "16GB", value: "16GB" },
-            { name: "32GB", value: "32GB" },
+            { name: "4GB", value: "4gb" },
+            { name: "8GB", value: "8gb" },
+            { name: "16GB", value: "16gb" },
+            { name: "32GB", value: "32gb" },
         ]
     },
     {
