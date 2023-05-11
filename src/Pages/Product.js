@@ -23,7 +23,12 @@ const Product = () => {
         const getProductDetail = async () => {
             setIsLoading(true)
             const res = await axios.get(API + "detail=" + productID)
-            setProductDetail(res.data)
+            const data = res.data;
+            data.PriceCompare[data.ShopName] = {
+                ProductLink: data.ProductLink,
+                SalePrice: data.SalePrice
+            }
+            setProductDetail(data)
             setIsLoading(false)
         }
         getProductDetail()
@@ -43,7 +48,7 @@ const Product = () => {
                             </p>
                         </div>
                         <div className="flex mt-[40px]">
-                            <div className=" w-[50%] h-[500px] flex items-center">
+                            <div className=" w-[50%] h-[400px] flex items-center">
                                 <img src={productDetail.ImageLink} className="p-[20px] rounded-[10px] bg-white h-[100%]" alt="item" />
                             </div>
                             <div className="flex w-[50%] justify-left">
