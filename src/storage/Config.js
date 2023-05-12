@@ -59,6 +59,17 @@ export const CONFIG = [
         ]
     },
     {
+        title: "Thể loại",
+        key: "feature",
+        value: [
+            { name: "Doanh nhân", value: "doanhnhan" },
+            { name: "Gaming", value: "gaming" },
+            { name: "Văn phòng", value: "vanphong" },
+            { name: "Thiết kế đồ họa", value: "thietkedohoa" },
+            { name: "Học sinh, sinh viên", value: "hocsinhsinhvien" },
+        ]
+    },
+    {
         title: "Shop",
         key: "shop",
         value: [
