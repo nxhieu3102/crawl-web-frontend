@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom'
 import { LOGO } from '../storage/Config'
 
 const API = process.env.REACT_APP_API
+const defaultImageLinkLaptop = "https://cdn2.cellphones.com.vn/x358,webp,q100/media/catalog/product/1/_/1_126_2_1.png"
 
 const Product = () => {
     const location = useLocation()
@@ -49,7 +50,7 @@ const Product = () => {
                         </div>
                         <div className="flex mt-[40px]">
                             <div className=" w-[50%] h-[400px] flex items-center">
-                                <img src={productDetail.ImageLink} className="p-[20px] rounded-[10px] bg-white h-[100%]" alt="item" />
+                                <img src={productDetail.ImageLink.length === 0 ? defaultImageLinkLaptop : productDetail.ImageLink} className="p-[20px] rounded-[10px] bg-white h-[100%]" alt="item" />
                             </div>
                             <div className="flex w-[50%] justify-left">
                                 {Object.keys(productDetail.PriceCompare).map((compare, index) => {
@@ -69,7 +70,7 @@ const Product = () => {
                             <h2 className="text-[20px] font-bold">Thông số kĩ thuật {productDetail.ProductName}</h2>
                             <div className='mt-[16px] w-full'>
                                 {Object.keys(productDetail.Configuration).map((key, index) => {
-                                    return(
+                                    return (
                                         <div className='text-[18px] mb-[12px] flex'>
                                             <span className='font-bold w-[20%] block'>{key}</span>: {productDetail.Configuration[key]}
                                         </div>
